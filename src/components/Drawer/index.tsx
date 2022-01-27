@@ -18,7 +18,6 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { Outlet } from "react-router-dom";
-import main from "../../menu-items/main";
 
 const drawerWidth = 240;
 
@@ -138,14 +137,14 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {[
-            { label: "Inbox", icon: <InboxIcon /> },
-            { label: "Starred", icon: <InboxIcon /> },
-            { label: "Send email", icon: <InboxIcon /> },
-            { label: "Drafts", icon: <InboxIcon /> },
+            { label: "Inbox", icon: <InboxIcon />, url: "/" },
+            { label: "Starred", icon: <InboxIcon />, url: "/" },
+            { label: "Send email", icon: <InboxIcon />, url: "/" },
+            { label: "Drafts", icon: <InboxIcon />, url: "/" },
           ].map((item, index) => (
             <ListItem button key={index}>
               <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.title} />
+              <ListItemText primary={item.label} />
             </ListItem>
           ))}
         </List>
